@@ -328,7 +328,7 @@ static u8 GenuineMacAddress[][3] =
 #define HCI_COMMAND_REQ 0
 
 #define MAX_PADS  4
-#define MAX_DELAY 10
+#define MAX_DELAY 1
 
 static u8 hci_buf[MAX_BUFFER_SIZE] __attribute((aligned(4))) = {0};
 static u8 l2cap_buf[MAX_BUFFER_SIZE + 32] __attribute((aligned(4))) = {0};
