@@ -187,19 +187,19 @@ int New_Reset_Iop(const char *arg, int arglen)
 
     if (iop_reboot_count >= 2) {
 #ifdef PADEMU
-        config->PadEmuSettings |= (LoadOPLModule(OPL_MODULE_ID_MCEMU, 0, 0, NULL) > 0) << 24;
+      //  config->PadEmuSettings |= (LoadOPLModule(OPL_MODULE_ID_MCEMU, 0, 0, NULL) > 0) << 24;
 #else
         LoadOPLModule(OPL_MODULE_ID_MCEMU, 0, 0, NULL);
 #endif
     }
 
 #ifdef PADEMU
-    if (iop_reboot_count >= 2 && config->EnablePadEmuOp) {
+   /* if (iop_reboot_count >= 2 && config->EnablePadEmuOp) {
         char args_for_pademu[8];
         memcpy(args_for_pademu, &config->PadEmuSettings, 4);
         memcpy(args_for_pademu + 4, &config->PadMacroSettings, 4);
         LoadOPLModule(OPL_MODULE_ID_PADEMU, 0, sizeof(args_for_pademu), args_for_pademu);
-    }
+    }*/
 #endif
 
     DPRINTF("Exiting services...\n");
