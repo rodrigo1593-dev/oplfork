@@ -182,7 +182,7 @@ void sysReset(int modload_mask)
 {
 #ifdef PADEMU
     ds34usb_reset();
-   // ds34bt_reset();
+    ds34bt_reset();
 #endif
     fileXioExit();
     SifExitIopHeap();
@@ -269,7 +269,7 @@ void sysReset(int modload_mask)
     int ds3pads = 1; // only one pad enabled
 
     ds34usb_deinit();
-   // ds34bt_deinit();
+    ds34bt_deinit();
 
     if (modload_mask & SYS_LOAD_USB_MODULES) {
         LOG("[DS34_USB]:\n");
